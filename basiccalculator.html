@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+    <head>
+    <title>JavaScript Homework</title>
+    <script src="/js/cbojsc.js"></script>
+    </head>
+    <body>
+        
+    
+        
+        
+        <div id="calculator" class="calc">
+            <input type="text" id="display" readonly value="">
+            <div id="keys">
+                
+            <button onclick="buttons(7)">7</button>
+            <button onclick="buttons(8)">8</button>
+            <button onclick="buttons(9)">9</button>
+            <button onclick="div()">/</button>
+
+            
+            <button onclick="buttons(4)">4</button>
+            <button onclick="buttons(5)">5</button>
+            <button onclick="buttons(6)">6</button>
+            <button onclick="mult()">x</button>
+
+            
+            <button onclick="buttons(1)">1</button>
+            <button onclick="buttons(2)">2</button>
+            <button onclick="buttons(3)">3</button>
+            <button onclick="sub()">-</button>
+            
+            <button onclick="buttons(0)">0</button>
+            <button onclick="buttons('.')">.</button>
+            <button onclick="answer()">=</button>
+            <button onclick="add()">+</button>
+               
+            <button onclick="del()">DEL</button>
+            <button onclick="erase()">RST</button>
+            <button onclick="answer()">ANS</button>
+            <button onclick="erase()">CLR</button>
+                </div>
+            </div>
+        </div>
+    <!-- CSS -->
+    
+    <style>
+/*    
+        
+colors:
+#0fa3b1 
+#b5e2fa 
+#f9f7f3 
+#eddea4 
+#f7a073
+   */ 
+
+    
+
+    body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            background-color:#fffbf1;
+        }
+        
+        header {
+            text-weight:bold;
+        }
+    
+        .container {
+            width: 400px;
+            margin: 10px;
+        }
+        
+        #calculator {
+            font-family: ;
+            max-width: 250px;
+            border-radius: 5px;
+            margin:4%;
+            background-color:#74d6e7;
+            padding: 10px;
+        }
+        
+        #display {
+            text-align: center;
+            height: 50px;
+            width: 90%;
+            line-height: 50px;
+            padding: 10px;
+            font-size: 25px;
+            background-color:#fffbf1; 
+        }
+        
+        button {
+            width: 62px;
+            height: 50px;
+            border-radius: 1px;
+            font-size: 25px;
+            text-align: center;
+            color:#f8f99a;
+            background-color:#ffb9d2;
+            font-weight:bold;
+            
+        }
+        
+        button:hover{
+            background-color: #f997c4;
+        }
+        
+        #keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background-color:#74d6e7;
+            margin: 0px;
+            padding-top:8px;
+
+        }
+
+    </style>
+    
+    <h3>Beach Calculator</h3>
+    
+    
+    <script>
+        
+    //store value of button click to a variable    
+    
+    var button = document.getElementById("display").valueAsNumber + String(result);
+    var result = 0 + button;
+    var num1 = ""
+    var num2 = ""
+    var currentDisplay = document.getElementById("display");
+    var operandUsed = "";
+    var result = document.getElementById("equal") ;
+        
+        
+        
+    function buttons(num) {
+        document.getElementById("display").value += num ;
+        
+        //console.log("The button is, ", num);
+    }
+    
+
+
+    function add() {
+        num1 = document.getElementById("display").value;
+        operandUsed = '+'
+        document.getElementById("display").value = "";
+        
+        //console.log("The number is, ", num1);
+        //console.log("Operand used is:", operandUsed);
+    } 
+    
+    
+    function sub() {
+        num1 = document.getElementById("display").value;
+        operandUsed = '-'
+        document.getElementById("display").value = "";
+        
+        
+        //console.log("The number is, ", num1);
+        //console.log("Operand used is:", operandUsed);
+    }
+    
+    
+    function mult() {
+        num1 = document.getElementById("display").value;
+        operandUsed = '*'
+        document.getElementById("display").value = "";
+        
+        
+        //console.log("The number is, ", num1);
+        //console.log("Operand used is:", operandUsed);
+    }
+    
+    function div() {
+        num1 = document.getElementById("display").value;
+        operandUsed = '/'
+        document.getElementById("display").value = "";
+        
+        //console.log("The number is, ", num1);
+        //console.log("Operand used is:", operandUsed);
+    }
+
+    //TOMORROW:
+    //rewrite answer() function to apply to all operands used
+    //figure out how to use '.' for decimals
+    //create functions for DEL to delete single numbers
+    
+    function answer() {
+        num2 = document.getElementById("display").value;
+        if(operandUsed == '+') {
+            result = Number(num1) + Number(num2);
+        }
+        else if(operandUsed == '-') {
+            result = Number(num1) - Number(num2);
+        }
+        else if(operandUsed == '*') {
+            result = Number(num1) * Number(num2);
+        }
+        else if(operandUsed == '/') {
+            result = Number(num1) / Number(num2);
+        }
+        
+        document.getElementById("display").value = result;
+
+    }
+    
+    //i want the screen to reset immediately after next button 
+    //is clicked after the result is displayed
+    
+    function erase() {
+        document.getElementById("display").value = "";
+        //console.log("erase called");
+    }
+    
+    function del() {
+        
+    }
+    
+    
+    
+    
+    //store 2 numbs.
+    //take display's value and save to var
+    //when taking 2nd number, clear the display
+    //don't do math until '='
+    //use # from display and add to 1st #
+    //var to save operand
+    
+    
+    
+    
+    </script>    
+        
+        
+        
+        
+        
+    </body>
+</html>
+   
